@@ -18,6 +18,12 @@ app.use(session({
 	saveUninitialized: false
 }));
 
+//make userId available in templates
+app.use(function(req, res, next){
+	res.locals.currentUser = req.session.userId;
+	next();
+})
+
 // parse incoming requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
