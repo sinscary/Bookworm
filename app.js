@@ -5,7 +5,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var app = express();
 
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost:27017/bookworm");
+mongoose.connect("mongodb://heroku_76s37f14:bolmad4npg6j0amfm70c9b35gg@ds021701.mlab.com:21701/heroku_76s37f14" || "mongodb://localhost:27017/bookworm");
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
